@@ -1,7 +1,8 @@
 import React from "react";
 import * as BlogTypes from "../../types/blog";
 import utilStyles from '../../styles/utils.module.css'
-
+import Link from 'next/link'
+import Date from '../date'
 
 const BlogList: React.FunctionComponent<BlogTypes.BlogProps> = ({ PostList }) => {
 
@@ -12,11 +13,13 @@ const BlogList: React.FunctionComponent<BlogTypes.BlogProps> = ({ PostList }) =>
             <ul className={utilStyles.list}>
                 {PostList.map(({ id, date, title }) => (
                     <li className={utilStyles.listItem} key={id}>
-                        {title}
+                        <Link href={`/posts/${id}`}>
+                            <a>{title}</a>
+                        </Link>
                         <br />
-                        {id}
-                        <br />
-                        {date}
+                        <small className={utilStyles.lightText}>
+                            <Date dateString={date} />
+                        </small>
                     </li>
                 ))}
             </ul>
