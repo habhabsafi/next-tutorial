@@ -5,7 +5,7 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import React from 'react'
 import layoutProps from '../types/layout'
-const name = 'Your Name'
+const name = 'Safi Habhab'
 export const siteTitle = 'Next.js Sample Website'
 
 const Layout: React.FunctionComponent<layoutProps> = ({ children, home }) => {
